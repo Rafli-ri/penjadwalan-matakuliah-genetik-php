@@ -1,0 +1,106 @@
+ <?php
+                // echo '<hr><h4>Inisialisasi Populasi awal</h4>' .
+                //   // var_dump($aku);
+                //   'jumlah Pengampu :' . $pengampu . '<br>' .
+                //   'jumlah jam : ' . $jumlah_jam . '<br>' .
+                //   'jumlah Ruangan : ' . $ruangan . '<br>' .
+                //   'Jumlah Hari : ' . $jumlah_hari;
+                // echo  '<br>' . round($pengampu * $jumlah_jam * $jumlah_hari / 3)
+
+
+                ?>
+
+                <?php
+                echo '<hr><h4>Hitung Nilai Fitness</h4>' .  $length = count($fitness);
+                for ($i = 0; $i < $length; $i++) {
+                  print '<br>' . $fitness[$i];;
+                }
+                ?>
+                <?php
+                echo '<hr><h4>Seleksi</h4>' .   'Jumlah Rank : ' . ($jumlahRank) .
+                  '<br>' .
+                  'induk : ' . json_encode($induk) .
+                  'rank' . json_encode($rank); ?>
+                <?php
+                echo '<hr><h4>CrossOver</h4>' . json_encode($crossover); ?>
+                <?php
+                echo '<hr><h4>Mutasi</h4>'  . json_encode($mutasi); ?>
+                <?php
+
+
+                echo '<hr>';
+                var_dump($hitungfitness);
+                ?>
+                <?php
+                // $length = count($crossover);
+                // for ($i = 0; $i < $length; $i++) {
+                //   print  '<br>' . $crossover;
+                // }
+                // var_dump($crossover);
+                echo (json_encode($crossover[0]));
+                ?>
+
+                <?php var_dump($induk); ?>
+                <?php var_dump($GetIndividu); ?>
+                <!-- fitness -->
+                <?php
+                echo '<hr>';
+                echo 'individu';
+                echo '<br>';
+                ?>
+
+                <?php echo json_encode($individu[0]); ?>
+                <?= '<br>' ?>
+
+                <?php echo '<br><hr>' ?>
+///////////
+
+class CetakInfoProduk
+{
+    public $daftarProduk = array();
+
+    public function tambahProduk(Genetik $produk)
+    {
+        $this->daftarProduk[] = $produk;
+    }
+
+    public function cetak()
+    {
+        $str = "DAFTAR PRODUK : <br>";
+
+        foreach ($this->daftarProduk as $p) {
+            $str .= "- {$p->getPenulis()} <br>";
+        }
+
+        return $str;
+    }
+}
+
+// class CetakInfoProduk
+// {
+//     public $daftarProduk = array();
+//     public function getMethod(Genetik $produk)
+//     {
+//         $this->daftarProduk[] = $produk->Mutasi();
+//     }
+
+
+//     // public $daftarProduk = array();
+
+//     // public function tambahProduk( $genetik)
+//     // {
+//     //     // $this->daftarProduk[] = $genetik;
+//     //     $this->daftarProduk[] = $genetik->getPenulis();
+//     //     $this->daftarProduk[] = $genetik->Mutasi();
+//     //     $this->daftarProduk[] = $genetik->jumlah_pengampu;
+//     //     $this->daftarProduk[] = $genetik->HitungFitness();
+//     //     $this->daftarProduk[] = $genetik->StartCrossOver();
+//     //     $this->daftarProduk[] = $genetik->AmbilData();
+//     //     // echo ($genetik->Mutasi());
+//     //     // exit();
+//     // }
+
+// }
+// $genetik = new Genetik(0, '2011-2012', 10, 0.70, 0, 40, 5, '4-5-6', 6);
+// $info = new CetakInfoProduk();
+// var_dump($info->getMethod($genetik));
